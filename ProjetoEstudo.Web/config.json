@@ -1,0 +1,9 @@
+{
+  "ConnectioStrings": {
+    "SqlServerConnection": "",
+    "MySqlConnection": "Server=localhost;Database=ProjetoEstudoDB;Uid=root;Pwd=root"
+  }
+}
+
+
+

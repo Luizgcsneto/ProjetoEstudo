@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoEstudo.Dominio.Entidades;
 using ProjetoEstudo.Dominio.ObjetoDeValor;
+using ProjetoEstudo.Repositorio.Config;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,6 +26,14 @@ namespace ProjetoEstudo.Repositorio.Contexto
         {
         }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new PedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemPedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

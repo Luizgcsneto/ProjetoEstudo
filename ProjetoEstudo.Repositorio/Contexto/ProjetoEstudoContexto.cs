@@ -9,6 +9,8 @@ namespace ProjetoEstudo.Repositorio.Contexto
 {
    public class ProjetoEstudoContexto : DbContext
     {
+       
+
         public DbSet<Usuario> Usuarios { get; set; }
 
         public DbSet<Pedido> Pedidos { get; set; }
@@ -18,5 +20,11 @@ namespace ProjetoEstudo.Repositorio.Contexto
         public DbSet<ItemPedido> ItensPedidos { get; set; }
 
         public DbSet<FormaPagamento> FormaPagamento { get; set; }
+
+        public ProjetoEstudoContexto(DbContextOptions options) : base(options)
+        {
+        }
+
+
     }
 }

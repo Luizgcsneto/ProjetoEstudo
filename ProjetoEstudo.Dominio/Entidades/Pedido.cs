@@ -16,7 +16,10 @@ namespace ProjetoEstudo.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+           if(UsuarioId == 0)
+            {
+                AdicionarCritica("Faltando a identificação do usuário!");
+            }
         }
     }
 }

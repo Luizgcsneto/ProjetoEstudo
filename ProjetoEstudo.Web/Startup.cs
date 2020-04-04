@@ -28,8 +28,9 @@ namespace ProjetoEstudo.Web
             services.AddControllersWithViews();
 
             var connectionString = Configuration.GetConnectionString("MySqlConnection");
-            services.AddDbContext<ProjetoEstudoContexto>(option => 
-                                                            option.UseMySql(connectionString, 
+            services.AddDbContext<ProjetoEstudoContexto>(option =>
+                                                            option.UseLazyLoadingProxies()
+                                                            .UseMySql(connectionString, 
                                                                 m => m.MigrationsAssembly("ProjetoEstudo.Repositorio")));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -13,6 +13,7 @@ namespace ProjetoEstudo.Dominio.Entidades
         public DateTime DataPrevisaoEntrega { get; set; }
 
         public int UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
         public ICollection<ItemPedido> ItensPedido { get; set; }
 

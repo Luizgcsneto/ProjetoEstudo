@@ -10,15 +10,32 @@ namespace ProjetoEstudo.Dominio.Entidades
 
         public DateTime DataPedido { get; set; }
 
+        public DateTime DataPrevisaoEntrega { get; set; }
+
         public int UsuarioId { get; set; }
 
         public ICollection<ItemPedido> ItensPedido { get; set; }
+
+        public String Estado { get; set; }
+
+        public String Cidade { get; set; }
+
+        public String EnderecoCompleto { get; set; }
+
+        public String CEP { get; set; }
+
+        public int NumeroEndereco { get; set; }
 
         public override void Validate()
         {
            if(UsuarioId == 0)
             {
                 AdicionarCritica("Faltando a identificação do usuário!");
+            }
+
+            if (string.IsNullOrEmpty(CEP))
+            {
+                AdicionarCritica("O CEP não pode estar vazio");
             }
         }
     }

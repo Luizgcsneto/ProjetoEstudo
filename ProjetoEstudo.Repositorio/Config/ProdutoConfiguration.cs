@@ -11,7 +11,23 @@ namespace ProjetoEstudo.Repositorio.Config
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(p => p.Id);
+
+            builder
+                .Property(p => p.Nome)
+                .IsRequired()
+                .HasMaxLength(20)
+                .HasColumnType("varchar");
+
+            builder
+               .Property(p => p.Descricao)
+               .IsRequired()
+               .HasMaxLength(200)
+               .HasColumnType("varchar");
+
+            builder
+               .Property(p => p.Preco)
+               .IsRequired();
         }
     }
 }

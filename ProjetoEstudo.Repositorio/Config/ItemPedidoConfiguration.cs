@@ -11,7 +11,7 @@ namespace ProjetoEstudo.Repositorio.Config
     {
         public void Configure(EntityTypeBuilder<ItemPedido> builder)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }

@@ -11,7 +11,17 @@ namespace ProjetoEstudo.Repositorio.Config
     {
         public void Configure(EntityTypeBuilder<FormaPagamento> builder)
         {
-           
+            builder.HasKey(fp => fp.Id);
+
+            builder
+                .Property(fp => fp.Nome)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            builder
+                .Property(fp => fp.Descricao)
+                .IsRequired()
+                .HasMaxLength(100);
         }
     }
 }

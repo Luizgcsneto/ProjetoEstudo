@@ -7,7 +7,7 @@ namespace ProjetoEstudo.Dominio.Entidades
 {
     public abstract class Entidade
     {
-        public List<String> _mensagensValidacao { get; set; }
+        private List<String> _mensagensValidacao { get; set; }
 
         private List<String> mensagemValidacao
         {

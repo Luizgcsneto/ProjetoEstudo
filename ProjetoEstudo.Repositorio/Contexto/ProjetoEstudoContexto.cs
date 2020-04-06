@@ -24,6 +24,7 @@ namespace ProjetoEstudo.Repositorio.Contexto
 
         public ProjetoEstudoContexto(DbContextOptions options) : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

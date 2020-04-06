@@ -15,15 +15,11 @@ namespace ProjetoEstudo.Repositorio.Config
 
             builder
               .Property(pe => pe.Cidade)
-              .IsRequired()
-              .HasMaxLength(100)
-              .HasColumnType("varchar");
+              .IsRequired();
 
             builder
                 .Property(pe => pe.Estado)
-                .IsRequired()
-                .HasMaxLength(30)
-                .HasColumnType("varchar");
+                .IsRequired();
 
             builder
                .Property(pe => pe.DataPedido)
@@ -35,19 +31,18 @@ namespace ProjetoEstudo.Repositorio.Config
 
             builder
                .Property(pe => pe.EnderecoCompleto)
-               .IsRequired()
-               .HasMaxLength(100)
-               .HasColumnType("varchar");
+               .IsRequired();
 
             builder
                .Property(pe => pe.CEP)
-               .IsRequired()
-               .HasMaxLength(10);
-            
+               .IsRequired();
+
 
             builder
               .Property(pe => pe.NumeroEndereco)
               .IsRequired();
+
+            builder.HasOne(pe => pe.FormaPagamento);
         }
     }
 }

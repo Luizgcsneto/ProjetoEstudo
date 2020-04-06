@@ -8,13 +8,13 @@ namespace ProjetoEstudo.Dominio.Entidades
     {
         public int Id { get; set; }
 
-        public string Nome { get; set; }
+        public String Nome { get; set; }
 
-        public string SobreNome { get; set; }
+        public String SobreNome { get; set; }
 
-        public string Email { get; set; }
+        public String Email { get; set; }
 
-        public string Senha { get; set; }
+        public String Senha { get; set; }
 
         public virtual ICollection<Pedido> Pedidos { get; set; }
 

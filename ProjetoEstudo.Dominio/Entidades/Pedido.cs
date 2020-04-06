@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoEstudo.Dominio.ObjetoDeValor;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,9 +14,12 @@ namespace ProjetoEstudo.Dominio.Entidades
         public DateTime DataPrevisaoEntrega { get; set; }
 
         public int UsuarioId { get; set; }
+
         public virtual Usuario Usuario { get; set; }
 
-        public ICollection<ItemPedido> ItensPedido { get; set; }
+        public virtual ICollection<ItemPedido> ItensPedido { get; set; }
+
+        public virtual FormaPagamento FormaPagamento { get; set; }
 
         public String Estado { get; set; }
 
@@ -24,7 +28,7 @@ namespace ProjetoEstudo.Dominio.Entidades
         public String EnderecoCompleto { get; set; }
 
         public String CEP { get; set; }
-
+      
         public int NumeroEndereco { get; set; }
 
         public override void Validate()

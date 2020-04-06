@@ -15,15 +15,13 @@ namespace ProjetoEstudo.Repositorio.Config
 
             builder
                 .Property(p => p.Nome)
-                .IsRequired()
-                .HasMaxLength(20)
-                .HasColumnType("varchar");
+                .IsRequired();
+               
 
             builder
                .Property(p => p.Descricao)
-               .IsRequired()
-               .HasMaxLength(200)
-               .HasColumnType("varchar");
+               .IsRequired();
+               
 
             builder
                .Property(p => p.Preco)

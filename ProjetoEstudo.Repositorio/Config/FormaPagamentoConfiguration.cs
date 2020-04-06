@@ -15,13 +15,14 @@ namespace ProjetoEstudo.Repositorio.Config
 
             builder
                 .Property(fp => fp.Nome)
-                .IsRequired()
-                .HasMaxLength(50);
+                .IsRequired();
+
 
             builder
                 .Property(fp => fp.Descricao)
-                .IsRequired()
-                .HasMaxLength(100);
+                .IsRequired();
+                
+                
         }
     }
 }

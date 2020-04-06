@@ -15,25 +15,23 @@ namespace ProjetoEstudo.Repositorio.Config
 
             builder
                 .Property(u => u.Email)
-                .IsRequired()
-                .HasMaxLength(50);
+                .IsRequired();
+
 
             builder
                 .Property(u => u.Nome)
-                .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .IsRequired();
+
 
             builder
                .Property(u => u.SobreNome)
-               .IsRequired()
-               .HasMaxLength(50)
-               .HasColumnType("varchar");
+               .IsRequired();
+
 
             builder
                .Property(u => u.Senha)
-               .IsRequired()
-               .HasMaxLength(400);
+               .IsRequired();
+              
 
             builder
                 .HasMany(u => u.Pedidos)

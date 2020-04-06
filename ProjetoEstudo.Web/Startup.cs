@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetoEstudo.Repositorio.Contexto;
+using Pomelo.EntityFrameworkCore.MySql;
 
 namespace ProjetoEstudo.Web
 {
@@ -27,7 +26,7 @@ namespace ProjetoEstudo.Web
         {
             services.AddControllersWithViews();
 
-            var connectionString = Configuration.GetConnectionString("MySqlConnection");
+            var connectionString = Configuration.GetConnectionString("projeto_estudo_db");
             services.AddDbContext<ProjetoEstudoContexto>(option =>
                                                             option.UseLazyLoadingProxies()
                                                             .UseMySql(connectionString, 

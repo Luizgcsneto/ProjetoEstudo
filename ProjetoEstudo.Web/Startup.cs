@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetoEstudo.Repositorio.Contexto;
 using Pomelo.EntityFrameworkCore.MySql;
+using ProjetoEstudo.Dominio.Contratos;
+using System;
+using ProjetoEstudo.Repositorio.Repositorios;
 
 namespace ProjetoEstudo.Web
 {
@@ -31,11 +34,19 @@ namespace ProjetoEstudo.Web
                                                             option.UseLazyLoadingProxies()
                                                             .UseMySql(connectionString, 
                                                                 m => m.MigrationsAssembly("ProjetoEstudo.Repositorio")));
+
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+        }
+
+        private void ProdutoRepositorio()
+        {
+            throw new NotImplementedException();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

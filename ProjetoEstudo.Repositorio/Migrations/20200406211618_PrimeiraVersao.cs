@@ -14,8 +14,8 @@ namespace ProjetoEstudo.Repositorio.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: false),
-                    Descricao = table.Column<string>(nullable: false)
+                    Nome = table.Column<string>(maxLength: 50,nullable: false),
+                    Descricao = table.Column<string>(maxLength: 100,nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,8 +28,8 @@ namespace ProjetoEstudo.Repositorio.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: false),
-                    Descricao = table.Column<string>(nullable: false),
+                    Nome = table.Column<string>(maxLength: 50,nullable: false),
+                    Descricao = table.Column<string>(maxLength: 100,nullable: false),
                     Preco = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
@@ -43,10 +43,10 @@ namespace ProjetoEstudo.Repositorio.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: false),
-                    SobreNome = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
-                    Senha = table.Column<string>(nullable: false)
+                    Nome = table.Column<string>(maxLength: 50, nullable: false),
+                    SobreNome = table.Column<string>(maxLength: 50,nullable: false),
+                    Email = table.Column<string>(maxLength: 50,nullable: false),
+                    Senha = table.Column<string>(maxLength: 250,nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,10 +63,10 @@ namespace ProjetoEstudo.Repositorio.Migrations
                     DataPrevisaoEntrega = table.Column<DateTime>(nullable: false),
                     UsuarioId = table.Column<int>(nullable: false),
                     FormaPagamentoId = table.Column<int>(nullable: true),
-                    Estado = table.Column<string>(nullable: false),
-                    Cidade = table.Column<string>(nullable: false),
-                    EnderecoCompleto = table.Column<string>(nullable: false),
-                    CEP = table.Column<string>(nullable: false),
+                    Estado = table.Column<string>(maxLength: 30, nullable: false),
+                    Cidade = table.Column<string>(maxLength: 30, nullable: false),
+                    EnderecoCompleto = table.Column<string>(maxLength: 100, nullable: false),
+                    CEP = table.Column<string>(maxLength: 10,nullable: false),
                     NumeroEndereco = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

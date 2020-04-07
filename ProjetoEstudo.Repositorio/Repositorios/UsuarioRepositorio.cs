@@ -1,5 +1,6 @@
 ﻿using ProjetoEstudo.Dominio.Contratos;
 using ProjetoEstudo.Dominio.Entidades;
+using ProjetoEstudo.Repositorio.Contexto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,10 @@ namespace ProjetoEstudo.Repositorio.Repositorios
 {
     public class UsuarioRepositorio : BaseRepositorio<Usuario>, IUsuarioRepositorio
     {
+        public UsuarioRepositorio(ProjetoEstudoContexto projetoEstudoContexto) : base(projetoEstudoContexto)
+        {
+        }
+
         public void Adicionar(Usuario tentity)
         {
             throw new NotImplementedException();
